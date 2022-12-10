@@ -27,7 +27,7 @@ result_stylish_r = '''{
         }
         setting6: {
             doge: {
-              - wow:
+              - wow: 
               + wow: so much
             }
             key: value
@@ -79,25 +79,25 @@ data_file2 = {"timeout": 20, "verbose": True, "host": "hexlet.io"}
 
 data_r_file1 = {
     "common": {
-  "setting1": "Value 1",
-  "setting2": 200,
-  "setting3": True,
-  "setting6": {
-      "key": "value",
-     "doge": {
-      "wow": ""
+      "setting1": "Value 1",
+      "setting2": 200,
+      "setting3": True,
+      "setting6": {
+        "key": "value",
+        "doge": {
+          "wow": ""
         }
       }
     },
     "group1": {
-       "baz": "bas",
-       "foo": "bar",
+      "baz": "bas",
+      "foo": "bar",
       "nest": {
-       "key": "value"
+        "key": "value"
       }
     },
     "group2": {
-       "abc": 12345,
+      "abc": 12345,
       "deep": {
         "id": 45
       }
@@ -106,24 +106,24 @@ data_r_file1 = {
 
 data_r_file2 = {
   "common": {
-      "follow": False,
+    "follow": False,
     "setting1": "Value 1",
     "setting3": None,
     "setting4": "blah blah",
     "setting5": {
-        "key5": "value5"
+      "key5": "value5"
     },
     "setting6": {
-         "key": "value",
-         "ops": "vops",
-        "doge": {
-         "wow": "so much"
+      "key": "value",
+      "ops": "vops",
+      "doge": {
+        "wow": "so much"
       }
     }
   },
   "group1": {
-     "foo": "bar",
-     "baz": "bars",
+    "foo": "bar",
+    "baz": "bars",
     "nest": "str"
   },
   "group3": {
