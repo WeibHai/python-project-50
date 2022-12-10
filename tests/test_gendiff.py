@@ -20,10 +20,10 @@ def test_difference_finder():
 
 
 def test_generate_diff():
-    assert generate_diff('tests/fixtures/file1.json', 'tests/fixtures/file2.json') == expected_results.result_stylish
-    assert generate_diff('tests/fixtures/file1.yml', 'tests/fixtures/file2.yml') == expected_results.result_stylish
-    assert generate_diff('tests/fixtures/r_file1.json', 'tests/fixtures/r_file2.json') == expected_results.result_stylish_r
-    assert generate_diff('tests/fixtures/r_file1.yml', 'tests/fixtures/r_file2.yml') == expected_results.result_stylish_r
+    assert generate_diff('tests/fixtures/file1.json', 'tests/fixtures/file2.json', formatter='stylish') == expected_results.result_stylish
+    assert generate_diff('tests/fixtures/file1.yml', 'tests/fixtures/file2.yml', formatter='stylish') == expected_results.result_stylish
+    assert generate_diff('tests/fixtures/r_file1.json', 'tests/fixtures/r_file2.json', formatter='stylish') == expected_results.result_stylish_r
+    assert generate_diff('tests/fixtures/r_file1.yml', 'tests/fixtures/r_file2.yml', formatter='stylish') == expected_results.result_stylish_r
 
     assert generate_diff('tests/fixtures/file1.json', 'tests/fixtures/file2.json', formatter='plain') == expected_results.result_plain
     assert generate_diff('tests/fixtures/file1.yml', 'tests/fixtures/file2.yml', formatter='plain') == expected_results.result_plain

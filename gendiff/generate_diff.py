@@ -12,9 +12,9 @@ def post_processing(data):
     return data
 
 
-def generate_diff(first_file, second_file, formatter='stylish'):
-    if formatter == 'stylish':
-        return post_processing(get_stylish_view(
+def generate_diff(first_file, second_file, formatter):
+    if formatter == 'plain':
+        return post_processing(get_plain_view(
             get_diff(get_data(first_file), get_data(second_file))))
 
     elif formatter == 'json':
@@ -22,5 +22,5 @@ def generate_diff(first_file, second_file, formatter='stylish'):
             get_diff(get_data(first_file), get_data(second_file)))
 
     else:
-        return post_processing(get_plain_view(
+        return post_processing(get_stylish_view(
             get_diff(get_data(first_file), get_data(second_file))))
