@@ -1,0 +1,5 @@
+gendiff.egg-info/
+.venv/
+dist/
+__pycache__/
+coverage.xml
