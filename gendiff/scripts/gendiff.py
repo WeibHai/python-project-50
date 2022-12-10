@@ -1,5 +1,5 @@
 import argparse
-from gendiff.engine import get_result
+from gendiff import generate_diff
 
 
 parser = argparse.ArgumentParser(description='''
@@ -17,13 +17,13 @@ parser.add_argument(
 args = parser.parse_args()
 
 
-def generate_diff():
+def main():
     if args.formatter == 'json':
-        get_result(args.first_file, args.second_file, args.formatter)
+        generate_diff(args.first_file, args.second_file, args.formatter)
         print('Разница записанна в файл формата JSON.')
     else:
-        print(get_result(args.first_file, args.second_file, args.formatter))
+        print(generate_diff(args.first_file, args.second_file, args.formatter))
 
 
 if __name__ == '__main__':
-    generate_diff()
+    main()
