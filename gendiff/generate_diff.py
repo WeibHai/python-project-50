@@ -2,7 +2,7 @@ from gendiff.file_reader import get_data
 from gendiff.difference_finder import get_diff
 from gendiff.formatter.stylish import get_stylish_view
 from gendiff.formatter.plain import get_plain_view
-from gendiff.formatter.json import write_in_json
+from gendiff.formatter.json import get_json_view
 
 
 def post_processing(data):
@@ -18,7 +18,7 @@ def generate_diff(first_file, second_file, formatter='stylish'):
             get_diff(get_data(first_file), get_data(second_file))))
 
     elif formatter == 'json':
-        return write_in_json(
+        return get_json_view(
             get_diff(get_data(first_file), get_data(second_file)))
 
     else:

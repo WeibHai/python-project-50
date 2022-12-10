@@ -28,8 +28,8 @@ def stylish(tree, depth):
     for node in tree:
         name = node.get('name')
         type = node.get('type')
-        raw_value = node.get('value')
         value = stylish_node(node.get('value'), depth + 1)
+        children = node.get('children')
 
         if type == 'added':
             result.append('{indent}{symbol} {name}: {value}'.format(
@@ -46,7 +46,7 @@ def stylish(tree, depth):
         elif type == 'root':
             result.append('{indent}{symbol} {name}: {value}'.format(
                 indent=opener, symbol=' ',
-                name=name, value=stylish(raw_value, depth + 1)))
+                name=name, value=stylish(children, depth + 1)))
 
         else:
             result.append('{indent}{symbol} {name}: {value}'.format(

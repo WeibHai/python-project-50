@@ -34,12 +34,13 @@ def plain(tree):
         elif isinstance(node, dict):
             name = node.get('name')
             type_node = node.get('type')
+            children = node.get('children')
             value = node.get('value')
             value2 = node.get('value2')
 
             if type_node == 'root':
                 return list(map(lambda element: inner(
-                    element, path + [name]), value))
+                    element, path + [name]), children))
 
             elif type_node == 'added':
                 path.append(name)

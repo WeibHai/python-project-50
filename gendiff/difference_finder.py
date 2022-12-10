@@ -7,7 +7,8 @@ def get_diff(first_data, second_data):
         if type(first) == dict and type(second) == dict:
             tree_collection.append({'type': 'root',
                                     'name': key,
-                                    'value': get_diff(first, second)})
+                                    'value': None,
+                                    'children': get_diff(first, second)})
 
         elif first == second:
             tree_collection.append({'type': 'unchanged',

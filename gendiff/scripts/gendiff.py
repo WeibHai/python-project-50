@@ -18,11 +18,7 @@ args = parser.parse_args()
 
 
 def main():
-    if args.formatter == 'json':
-        generate_diff(args.first_file, args.second_file, args.formatter)
-        print('Разница записанна в файл формата JSON.')
-    else:
-        print(generate_diff(args.first_file, args.second_file, args.formatter))
+    print(generate_diff(args.first_file, args.second_file, args.formatter))
 
 
 if __name__ == '__main__':

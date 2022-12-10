@@ -2,6 +2,7 @@ from gendiff.file_reader import get_data
 from gendiff.difference_finder import get_diff
 from gendiff import generate_diff
 from tests.fixtures import expected_results
+import json
 
 
 def test_file_reader():
@@ -18,7 +19,7 @@ def test_difference_finder():
     assert get_diff(get_data('tests/fixtures/r_file1.yml'), get_data('tests/fixtures/r_file2.yml')) == expected_results.r_internal_representation
 
 
-def test_engine():
+def test_generate_diff():
     assert generate_diff('tests/fixtures/file1.json', 'tests/fixtures/file2.json', formatter='stylish') == expected_results.result_stylish
     assert generate_diff('tests/fixtures/file1.yml', 'tests/fixtures/file2.yml', formatter='stylish') == expected_results.result_stylish
     assert generate_diff('tests/fixtures/r_file1.json', 'tests/fixtures/r_file2.json', formatter='stylish') == expected_results.result_stylish_r
@@ -28,3 +29,8 @@ def test_engine():
     assert generate_diff('tests/fixtures/file1.yml', 'tests/fixtures/file2.yml', formatter='plain') == expected_results.result_plain
     assert generate_diff('tests/fixtures/r_file1.json', 'tests/fixtures/r_file2.json', formatter='plain') == expected_results.result_plain_r
     assert generate_diff('tests/fixtures/r_file1.yml', 'tests/fixtures/r_file2.yml', formatter='plain') == expected_results.result_plain_r
+
+    assert generate_diff('tests/fixtures/file1.json', 'tests/fixtures/file2.json', formatter='json') == json.dumps(expected_results.internal_representation, indent=4)
+    assert generate_diff('tests/fixtures/file1.yml', 'tests/fixtures/file2.yml', formatter='json') == json.dumps(expected_results.internal_representation, indent=4)
+    assert generate_diff('tests/fixtures/r_file1.json', 'tests/fixtures/r_file2.json', formatter='json') == json.dumps(expected_results.r_internal_representation, indent=4)
+    assert generate_diff('tests/fixtures/r_file1.yml', 'tests/fixtures/r_file2.yml', formatter='json') == json.dumps(expected_results.r_internal_representation, indent=4)
