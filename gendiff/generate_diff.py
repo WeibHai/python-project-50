@@ -12,7 +12,7 @@ def post_processing(data):
     return data
 
 
-def generate_diff(first_file, second_file, formatter='stylish'):
+def generate_diff(first_file, second_file, formatter):
     if formatter == 'stylish':
         return post_processing(get_stylish_view(
             get_diff(get_data(first_file), get_data(second_file))))
