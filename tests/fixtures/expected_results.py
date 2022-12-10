@@ -27,7 +27,7 @@ result_stylish_r = '''{
         }
         setting6: {
             doge: {
-              - wow: 
+              - wow:
               + wow: so much
             }
             key: value
@@ -83,21 +83,21 @@ data_r_file1 = {
       "setting2": 200,
       "setting3": True,
       "setting6": {
-        "key": "value",
-        "doge": {
-          "wow": ""
+           "key": "value",
+          "doge": {
+           "wow": ""
         }
       }
     },
     "group1": {
-      "baz": "bas",
-      "foo": "bar",
+       "baz": "bas",
+       "foo": "bar",
       "nest": {
-        "key": "value"
+       "key": "value"
       }
     },
     "group2": {
-      "abc": 12345,
+       "abc": 12345,
       "deep": {
         "id": 45
       }
@@ -122,8 +122,8 @@ data_r_file2 = {
     }
   },
   "group1": {
-    "foo": "bar",
-    "baz": "bars",
+     "foo": "bar",
+     "baz": "bars",
     "nest": "str"
   },
   "group3": {
