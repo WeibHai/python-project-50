@@ -58,8 +58,6 @@ def stylish(tree, depth):
 
     result.append('{indent}{symbol}'.format(indent=closer, symbol='}'))
 
-
-
     return '\n'.join(result)
 
 
