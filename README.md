@@ -1,8 +1,13 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/WeibHai/python-project-50/workflows/hexlet-check/badge.svg)](https://github.com/WeibHai/python-project-50/actions)
 
+### Users tests and linter status:
+[![Actions Status](https://github.com/WeibHai/python-project-50/workflows/lint_and_tests/badge.svg)](https://github.com/WeibHai/python-project-50/actions)
+
+### Codeclimate maintainability:
 <a href="https://codeclimate.com/github/WeibHai/python-project-50/maintainability"><img src="https://api.codeclimate.com/v1/badges/0879bbf43057d1a6bbc1/maintainability" /></a>
 
+### Codeclimate test-cover:
 <a href="https://codeclimate.com/github/WeibHai/python-project-50/test_coverage"><img src="https://api.codeclimate.com/v1/badges/0879bbf43057d1a6bbc1/test_coverage" /></a>
 
 The project finds the difference between two trees
