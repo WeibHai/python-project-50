@@ -7,18 +7,14 @@
 
 The project finds the difference between two trees
 
-Comparison of deep nested files formatter mode - stylish (JSON and YML) - asciinema
+Comparison of deep or flat nested files formatter mode - stylish (JSON and YML)
 
-[![asciicast](https://asciinema.org/a/I4SYMHBrQ6HbzhbMwZSCw82Ed)](https://asciinema.org/a/I4SYMHBrQ6HbzhbMwZSCw82Ed)
+[![asciicast](https://asciinema.org/a/tI3VfdMWI3vS70QawGdsHqrIH.svg)](https://asciinema.org/a/tI3VfdMWI3vS70QawGdsHqrIH)
 
-Comparison of deep nested files formatter mode - plain (JSON and YML) - asciinema
+Comparison of deep or flat nested files formatter mode - plain (JSON and YML)
 
-[![asciicast](https://asciinema.org/a/KFm70M6D6LrZq4V2tWBmMwTiM)](https://asciinema.org/a/KFm70M6D6LrZq4V2tWBmMwTiM)
+[![asciicast](https://asciinema.org/a/l2vlNwVeeWmeSfJOwhCRSkXo7.svg)](https://asciinema.org/a/l2vlNwVeeWmeSfJOwhCRSkXo7)
 
-Flat JSON file comparison - asciinema
+Comparison of deep or flat nested files formatter mode - json (JSON and YML)
 
-[![asciicast](https://asciinema.org/a/KXMf4zAZtkXZcyGCEXKNfbTA4.svg)](https://asciinema.org/a/KXMf4zAZtkXZcyGCEXKNfbTA4)
-
-Flat YML file comparison - asciinema
-
-[![asciicast](https://asciinema.org/a/BnpoQyXUH3P0Tw3UsiiDXQYMe)](https://asciinema.org/a/BnpoQyXUH3P0Tw3UsiiDXQYMe)
+[![asciicast](https://asciinema.org/a/ewb0EptAaq8GGlidRMUCt7P9z.svg)](https://asciinema.org/a/ewb0EptAaq8GGlidRMUCt7P9z)

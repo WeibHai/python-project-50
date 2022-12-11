@@ -14,3 +14,7 @@ test-cov:
 	poetry run pytest --cov
 test-coverage:
 	poetry run pytest --cov=gendiff --cov-report xml
+s-r:
+	poetry run gendiff -f 'json' '/home/mark/work/python-project-50/tests/fixtures/r_file1.json' '/home/mark/work/python-project-50/tests/fixtures/r_file2.yml'
+s:
+	poetry run gendiff -f 'json' '/home/mark/work/python-project-50/tests/fixtures/file1.json' '/home/mark/work/python-project-50/tests/fixtures/file2.yml'
