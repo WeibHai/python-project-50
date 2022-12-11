@@ -38,7 +38,7 @@ def plain(tree):
             value = node.get('value')
             value2 = node.get('value2')
 
-            if type_node == 'root':
+            if type_node == 'parent_dir':
                 return list(map(lambda element: inner(
                     element, path + [name]), children))
 
@@ -63,4 +63,11 @@ def plain(tree):
 
 
 def get_plain_view(tree):
-    return plain(tree)
+    result = plain(tree)
+
+    replace_values = (("False", "false"), ("True", "true"), ("None", "null"))
+
+    for first_value, second_value in replace_values:
+        result = result.replace(first_value, second_value)
+
+    return result

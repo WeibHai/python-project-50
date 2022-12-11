@@ -4,8 +4,8 @@ def get_diff(first_data, second_data):
         first = first_data.get(key)
         second = second_data.get(key)
 
-        if type(first) == dict and type(second) == dict:
-            tree_collection.append({'type': 'root',
+        if isinstance(first, dict) and isinstance(second, dict):
+            tree_collection.append({'type': 'parent_dir',
                                     'name': key,
                                     'value': None,
                                     'children': get_diff(first, second)})

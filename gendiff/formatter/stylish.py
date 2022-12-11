@@ -43,7 +43,7 @@ def stylish(tree, depth):
             result.append('{indent}{symbol} {name}: {value}'.format(
                 indent=opener, symbol=' ', name=name, value=value))
 
-        elif type == 'root':
+        elif type == 'parent_dir':
             result.append('{indent}{symbol} {name}: {value}'.format(
                 indent=opener, symbol=' ',
                 name=name, value=stylish(children, depth + 1)))
@@ -58,8 +58,17 @@ def stylish(tree, depth):
 
     result.append('{indent}{symbol}'.format(indent=closer, symbol='}'))
 
+
+
     return '\n'.join(result)
 
 
 def get_stylish_view(tree):
-    return stylish(tree, depth=1)
+    result = stylish(tree, depth=1)
+
+    replace_values = (("False", "false"), ("True", "true"), ("None", "null"))
+
+    for first_value, second_value in replace_values:
+        result = result.replace(first_value, second_value)
+
+    return result
