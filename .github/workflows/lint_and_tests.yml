@@ -17,9 +17,9 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install poetry
-        poetry install flake8 pytest
-        poetry install PyYAML
-        poetry install pytest-cov
+        poetry add flake8 pytest
+        poetry add PyYAML
+        poetry add pytest-cov
         make lint	
         make test
     - name: Test & publish code coverage
