@@ -1,5 +1,6 @@
 SPACE = ' '
 INDENT_MULTIPLIER = 4
+SYMBOL_CLOSE = '}'
 
 
 def stylish_node(node, depth):
@@ -10,10 +11,9 @@ def stylish_node(node, depth):
         result = ["{"]
 
         for name, value in node.items():
-            result.append('{indent}{symbol} {name}: {value}'.format(
-                indent=opener, symbol=' ',
-                name=name, value=stylish_node(value, depth + 1)))
-        result.append('{indent}{symbol}'.format(indent=closer, symbol='}'))
+            result.append(f'{opener}  {name}: {stylish_node(value, depth + 1)}')
+
+        result.append(f'{closer}{SYMBOL_CLOSE}')
         return '\n'.join(result)
     else:
         return node
@@ -29,34 +29,28 @@ def stylish(tree, depth):
         name = node.get('name')
         type = node.get('type')
         value = stylish_node(node.get('value'), depth + 1)
-        children = node.get('children')
 
         if type == 'added':
-            result.append('{indent}{symbol} {name}: {value}'.format(
-                indent=opener, symbol='+', name=name, value=value))
+            result.append(f'{opener}+ {name}: {value}')
 
         elif type == 'removed':
-            result.append('{indent}{symbol} {name}: {value}'.format(
-                indent=opener, symbol='-', name=name, value=value))
+            result.append(f'{opener}- {name}: {value}')
 
         elif type == 'unchanged':
-            result.append('{indent}{symbol} {name}: {value}'.format(
-                indent=opener, symbol=' ', name=name, value=value))
+            result.append(f'{opener}  {name}: {value}')
 
         elif type == 'parent_dir':
-            result.append('{indent}{symbol} {name}: {value}'.format(
-                indent=opener, symbol=' ',
-                name=name, value=stylish(children, depth + 1)))
+            children = stylish(node.get('children'), depth + 1)
+
+            result.append(f'{opener}  {name}: {children}')
 
         else:
-            result.append('{indent}{symbol} {name}: {value}'.format(
-                indent=opener, symbol='-', name=name, value=value))
+            value2 = stylish_node(node.get('value2'), depth + 1)
 
-            result.append('{indent}{symbol} {name}: {value}'.format(
-                indent=opener, symbol='+',
-                name=name, value=stylish_node(node.get('value2'), depth + 1)))
+            result.append(f'{opener}- {name}: {value}')
+            result.append(f'{opener}+ {name}: {value2}')
 
-    result.append('{indent}{symbol}'.format(indent=closer, symbol='}'))
+    result.append(f'{closer}{SYMBOL_CLOSE}')
 
     return '\n'.join(result)
 

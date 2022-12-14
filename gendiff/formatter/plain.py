@@ -34,28 +34,33 @@ def plain(tree):
         elif isinstance(node, dict):
             name = node.get('name')
             type_node = node.get('type')
-            children = node.get('children')
-            value = node.get('value')
-            value2 = node.get('value2')
+            value = plain_value(node.get('value'))
 
             if type_node == 'parent_dir':
+                children = node.get('children')
+
                 return list(map(lambda element: inner(
                     element, path + [name]), children))
 
             elif type_node == 'added':
                 path.append(name)
-                return "Property '{path}' was added with value: {value}".format(
-                    path='.'.join(path), value=plain_value(value))
+                path = '.'.join(path)
+
+                return f"Property '{path}' was added with value: {value}"
 
             elif type_node == 'removed':
                 path.append(name)
-                return "Property '{path}' was removed".format(
-                    path='.'.join(path))
+                path = '.'.join(path)
+
+                return f"Property '{path}' was removed"
 
             elif type_node == 'changed':
+                value2 = plain_value(node.get('value2'))
                 path.append(name)
-                return ("Property '{}' was updated. From {} to {}".format(
-                    '.'.join(path), plain_value(value), plain_value(value2)))
+                path = '.'.join(path)
+
+                return (
+                    f"Property '{path}' was updated. From {value} to {value2}")
 
         return '\n'.join(flatten(result))
 

@@ -1,17 +1,5 @@
-from gendiff.file_reader import get_data
 from gendiff import generate_diff
 import pytest
-
-
-@pytest.mark.parametrize("path, expected", [
-    ('tests/fixtures/file1.json', 'tests/fixtures/data1.txt'),
-    ('tests/fixtures/file2.json', 'tests/fixtures/data2.txt'),
-    ('tests/fixtures/file1.yml', 'tests/fixtures/data1.txt'),
-    ('tests/fixtures/file2.yml', 'tests/fixtures/data2.txt')])
-def test_file_reader(path, expected):
-    with open(expected, 'r') as file:
-        result = file.read()
-    assert str(get_data(path)) == result
 
 
 @pytest.mark.parametrize("path, path2, formatter, expected", [

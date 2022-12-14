@@ -1,11 +1,9 @@
-import json
-import yaml
-from yaml.loader import SafeLoader
-
-
-def get_data(file):
-    with open(file) as data:
-        if file[-4:] == 'json':
-            return json.load(data)
-        elif file[-4:] == '.yml' or file[-4:] == 'yaml':
-            return yaml.load(data, Loader=SafeLoader)
+def read_file(path):
+    result = {}
+    if path[-4:] == 'json':
+        result['data'] = open(path)
+        result['format'] = 'json'
+    elif path[-4:] == 'yaml' or path[-4:] == '.yml':
+        result['data'] = open(path)
+        result['format'] = 'yaml'
+    return result
