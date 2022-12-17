@@ -6,6 +6,10 @@ from gendiff.parser import get_data
 from gendiff.file_reader import read_file
 
 
+#  the function returns the difference between two text files
+#  in the representation selected by the user (stylish/json/plain)
+
+
 def generate_diff(first_file, second_file, formatter='stylish'):
     if formatter == 'plain':
         return get_plain_view(

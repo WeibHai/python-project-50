@@ -1,3 +1,6 @@
+#  function returns object from file and format
+
+
 def read_file(path):
     result = {}
     if path[-4:] == 'json':

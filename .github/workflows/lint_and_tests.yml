@@ -18,10 +18,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install poetry
         poetry install
-        poetry add flake8
-        poetry add PyYAML
-        poetry add pytest
-        poetry add pytest-cov
         make lint	
         make test
     - name: Test & publish code coverage

@@ -1,3 +1,6 @@
+#  function returns an intermediate representation of the file difference
+
+
 def get_diff(first_data, second_data):
     tree_collection = []
     for key in sorted(first_data.keys() | second_data.keys()):
